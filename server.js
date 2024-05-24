@@ -27,8 +27,13 @@ connection.connect((err) => {
     console.log('Conectado ao banco de dados MySQL');
 });
 
-// Servir o arquivo HTML
+// Servir arquivos estáticos da pasta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Rota principal para servir o arquivo HTML
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // Rota para cadastrar o nome
 app.post('/api/cadastrar', (req, res) => {
