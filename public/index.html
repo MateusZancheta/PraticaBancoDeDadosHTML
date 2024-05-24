@@ -13,23 +13,6 @@
     <button type="submit">Cadastrar</button>
 </form>
 
-    <script>
-        document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            const nome = document.getElementById('nome').value;
-
-            const response = await fetch('/api/cadastrar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ nome })
-            });
-
-            const result = await response.json();
-            alert(result.message);
-        });
-    </script>
+    <script src="cadastrar.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 });
 
 // Rota para cadastrar o nome
-app.post('/api/cadastrar', (req, res) => {
+app.post('/cadastrar', (req, res) => {
     const { nome } = req.body;
 
     const sql = 'INSERT INTO pessoas (nome) VALUES (?)';
