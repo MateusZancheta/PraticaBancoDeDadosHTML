@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Nome</title>
+</head>
+<body>
+    <h2>Cadastro de Nome</h2>
+    <form id="cadastroForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+
+            const response = await fetch('/api/cadastrar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nome })
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        });
+    </script>
+</body>
+</html>
