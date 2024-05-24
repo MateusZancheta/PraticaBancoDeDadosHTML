@@ -1,8 +1,0 @@
-{
-  "functions": {
-    "api/cadastrar": {
-      "handler": "server.js",
-      "runtime": "nodejs14.x"
-    }
-  }
-}
